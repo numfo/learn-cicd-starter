@@ -38,7 +38,7 @@ func TestGetAPIKey(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			t.FailNow()
+			
 			apiKey, err := GetAPIKey(tt.headers)
 			if apiKey != tt.wantAPIKey {
 				t.Errorf("expected API key '%s', got '%s'", tt.wantAPIKey, apiKey)
