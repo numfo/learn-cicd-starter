@@ -38,11 +38,11 @@ func TestGetAPIKey(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			
+
 			apiKey, err := GetAPIKey(tt.headers)
 			if apiKey != tt.wantAPIKey {
 				t.Errorf("expected API key '%s', got '%s'", tt.wantAPIKey, apiKey)
-				
+
 			}
 			if tt.wantErrMsg == "" && err != nil {
 				t.Errorf("expected no error, got '%v'", err)
@@ -51,7 +51,7 @@ func TestGetAPIKey(t *testing.T) {
 					t.Errorf("expected error '%s', got nil", tt.wantErrMsg)
 				} else if err.Error() != tt.wantErrMsg {
 					t.Errorf("expected error '%s', got '%s'", tt.wantErrMsg, err.Error())
-				}
+		}
 			}
 		})
 	}
